@@ -7,12 +7,12 @@ echo '***************************************'
 WORKSPACE=/var/jenkins_home/workspace/pipeline-docker-maven
 
 echo 'Directory: $WORKSPACE/jenkins/maven/.m2/'
-ls -a $WORKSPACE/jenkins/maven/.m2/
+ls -l $WORKSPACE/jenkins/maven/.m2/
 
 echo ' '
 
 echo 'Directory: $WORKSPACE/java-app'
-ls -a $WORKSPACE/java-app
+ls -l $WORKSPACE/java-app
 
 docker run --rm -v $WORKSPACE/java-app:/app -v $WORKSPACE/jenkins/maven/.m2/:/root/.m2/ -w /app maven:3-alpine "$@"
 
